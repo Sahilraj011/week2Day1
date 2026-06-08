@@ -7,17 +7,14 @@ class Solution {
         for (char x : s.toCharArray()) {
             count.put(x, count.getOrDefault(x, 0) + 1);
         }
-    
         for (char x : t.toCharArray()) {
             count.put(x, count.getOrDefault(x, 0) - 1);
         }
-        
         for (int val : count.values()) {
             if (val != 0) {
                 return false;
             }
         }
-        
         return true;
     }
 }
@@ -47,11 +44,9 @@ class Solution {
         }
         for (int i = 0; i < ransomNote.length(); i++) {
             char ch = ransomNote.charAt(i);
-
             if (frq.getOrDefault(ch, 0) == 0) {
                 return false;
             }
-
             frq.put(ch, frq.get(ch) - 1);
         }
 
